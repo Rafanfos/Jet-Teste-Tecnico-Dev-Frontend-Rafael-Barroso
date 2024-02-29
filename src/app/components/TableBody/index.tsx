@@ -5,8 +5,8 @@ import ReserveColumn from "./Columns/ReserveColumn";
 import StatusColumn from "./Columns/StatusColumn";
 
 const TableBody = () => {
-  const smallScreenRows = new Array(3);
-  const bigScreenRows = new Array(6);
+  const smallScreenRows = [0, 1, 2];
+  const bigScreenRows = [0, 1, 2, 3, 4, 5];
 
   return (
     <>
