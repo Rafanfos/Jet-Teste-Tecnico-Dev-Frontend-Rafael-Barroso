@@ -5,90 +5,36 @@ import ReserveColumn from "./Columns/ReserveColumn";
 import StatusColumn from "./Columns/StatusColumn";
 
 const TableBody = () => {
+  const smallScreenRows = new Array(3);
+  const bigScreenRows = new Array(6);
+
   return (
     <>
-      <tr className="bg-white sm:hidden p-4">
-        <CarColumn />
+      {smallScreenRows.map((number) => (
+        <tr key={number} className="bg-white sm:hidden p-4">
+          <CarColumn />
 
-        <div className="flex flex-col">
-          <span className="font-semibold text-[#111928] text-[14px]">
-            Mini cooper 2020
-          </span>
+          <div className="flex flex-col">
+            <span className="font-semibold text-[#111928] text-[14px]">
+              Mini cooper 2020
+            </span>
+            <ReserveColumn />
+            <RatingColumn />
+          </div>
+
+          <ActionsColumn />
+        </tr>
+      ))}
+
+      {bigScreenRows.map((number) => (
+        <tr key={number} className="bg-white hidden sm:flex">
+          <CarColumn />
           <ReserveColumn />
+          <StatusColumn />
           <RatingColumn />
-        </div>
-
-        <ActionsColumn />
-      </tr>
-      <tr className="bg-white sm:hidden p-4">
-        <CarColumn />
-
-        <div className="flex flex-col">
-          <span className="font-semibold text-[#111928] text-[14px]">
-            Mini cooper 2020
-          </span>
-          <ReserveColumn />
-          <RatingColumn />
-        </div>
-
-        <ActionsColumn />
-      </tr>
-      <tr className="bg-white sm:hidden p-4">
-        <CarColumn />
-
-        <div className="flex flex-col">
-          <span className="font-semibold text-[#111928] text-[14px]">
-            Mini cooper 2020
-          </span>
-          <ReserveColumn />
-          <RatingColumn />
-        </div>
-
-        <ActionsColumn />
-      </tr>
-
-      <tr className="bg-white hidden sm:flex">
-        <CarColumn />
-        <ReserveColumn />
-        <StatusColumn />
-        <RatingColumn />
-        <ActionsColumn />
-      </tr>
-      <tr className="bg-white hidden sm:flex">
-        <CarColumn />
-        <ReserveColumn />
-        <StatusColumn />
-        <RatingColumn />
-        <ActionsColumn />
-      </tr>
-      <tr className="bg-white hidden sm:flex">
-        <CarColumn />
-        <ReserveColumn />
-        <StatusColumn />
-        <RatingColumn />
-        <ActionsColumn />
-      </tr>
-      <tr className="bg-white hidden sm:flex">
-        <CarColumn />
-        <ReserveColumn />
-        <StatusColumn />
-        <RatingColumn />
-        <ActionsColumn />
-      </tr>
-      <tr className="bg-white hidden sm:flex">
-        <CarColumn />
-        <ReserveColumn />
-        <StatusColumn />
-        <RatingColumn />
-        <ActionsColumn />
-      </tr>
-      <tr className="bg-white hidden sm:flex">
-        <CarColumn />
-        <ReserveColumn />
-        <StatusColumn />
-        <RatingColumn />
-        <ActionsColumn />
-      </tr>
+          <ActionsColumn />
+        </tr>
+      ))}
     </>
   );
 };
